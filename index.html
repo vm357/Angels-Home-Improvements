@@ -29,21 +29,20 @@
 
 <!-- TOP BAR -->
 <div class="top-bar py-2 transparent-header">
-  <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+  <div class="container-fluid px-4 d-flex align-items-center">
 
     <!-- Social Left -->
-    <div>
-      <a href="https://www.instagram.com/angelshomeimprovent2022/reels/?hl=en" class="me-2">
-        <i class="bi bi-instagram"></i>
-      </a>
-      <a href="https://www.tiktok.com/@angelshomeimprovement">
-        <i class="bi bi-tiktok"></i>
-      </a>
+    <div class="top-left">
+      <a href="https://instagram.com/angelshomeimprovements2022"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://tiktok.com/@angelshomeimprovements"><i class="fa-brands fa-tiktok ms-3"></i></a>
     </div>
 
+    <!-- Spacer -->
+    <div class="flex-grow-1"></div>
+
     <!-- Phone Right -->
-    <div>
-      <span><i class="bi bi-telephone"></i>(917) 861-3247</span>
+    <div class="top-right">
+      <span><i class="fa-solid fa-phone me-2"></i>(917) 861-3247</span>
     </div>
 
   </div>
@@ -85,7 +84,7 @@
 
   <!-- RIGHT: CTA BUTTON -->
   <div class="d-none d-lg-block">
-    <a href="contactus.html" class="cta-btn">Schedule a Consultation</a>
+    <a href="#quote" class="cta-btn">Schedule a Consultation</a>
   </div>
 
   <!-- Mobile Toggle -->
@@ -100,43 +99,35 @@
 <!-- HERO SECTION -->
  <section class="hero">
   <div class="swiper hero-slider">
+    <div class="hero-content">
+      <!-- <h1>Luxury Home Renovations</h1> -->
+      <!-- <p>Bathrooms • Kitchens • Basements • Decks</p> -->
+    </div>
 
     <div class="swiper-wrapper">
 
       <div class="swiper-slide" style="background-image: url('kitchen.avif')">
-        <div class="overlay">
-          <!-- <h1>Enhancing Your Space</h1> -->
-        </div>
+        <div class="overlay"></div>
       </div>
 
       <div class="swiper-slide" style="background-image: url('bathroom1.avif')">
-        <div class="overlay">
-          <!-- <h1>Modern Bathrooms</h1> -->
-        </div>
+        <div class="overlay"></div>
       </div>
 
       <div class="swiper-slide" style="background-image: url('kitchen.png')">
-        <div class="overlay">
-          <!-- <h1>Expert Craftsmanship</h1> -->
-        </div>
+        <div class="overlay"></div>
       </div>
 
       <div class="swiper-slide" style="background-image: url('bathroom.png')">
-        <div class="overlay">
-            <!-- <h1>Transform Your Home</h1> -->
-        </div>
+        <div class="overlay"></div>
       </div>
 
       <div class="swiper-slide" style="background-image: url('basement.png')">
-        <div class="overlay">
-            <!-- <h1>Transform Your Home</h1> -->
-        </div>
+        <div class="overlay"></div>
       </div>	  
 
       <div class="swiper-slide" style="background-image: url('deck.png')">
-        <div class="overlay">
-            <!-- <h1>Transform Your Home</h1> -->
-        </div>
+        <div class="overlay"></div>
       </div>
 
     </div>
@@ -183,8 +174,60 @@
 </section>
 <!-- END OF WHAT WE DO SECTION -->
 
+<!-- SOCIAL MEDIA SECTION -->
+<section class="social-section py-5">
+  <div class="container text-center">
+
+    <h2 class="mb-3 text-white">How We Get It Done</h2>
+    <!--
+    <p class="text-light mb-4">
+      Follow us for real transformations, behind-the-scenes, and project highlights.
+    </p>
+    -->
+
+    <!-- VIDEO GRID -->
+    <div class="row align-items-center justify-content-center">
+
+  <!-- LEFT VIDEO -->
+  <div class="col-md-4">
+    <div class="video-card">
+      <video src="Download.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+
+  <!-- CENTER CONTENT -->
+  <div class="col-md-4 text-center my-4 my-md-0">
+
+    <p class="text-light mb-3">
+      Follow us for real transformations, behind-the-scenes, and project highlights.
+    </p>
+
+    <div>
+      <a href="https://www.instagram.com/angelshomeimprovent2022/" class="social-link mx-2">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@angelshomeimprovement" class="social-link mx-2">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT VIDEO -->
+  <div class="col-md-4">
+    <div class="video-card">
+      <video src="result.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section>
+<!-- END SOCIAL SECTION -->
+
 <!-- LEAD FORM -->
-<section class="lead-section py-5">
+<section id="quote" class="lead-section py-5">
   <div class="container">
 
     <div class="lead-card">
@@ -293,16 +336,21 @@
 <!-- END OF LEAD FORM SECTION -->
 
 <!-- FOOTER -->
-<footer class="text-center text-white py-4" style="background-color: var(--dark);">
-  <div class="container">
+<footer class="footer py-5">
+  <div class="container text-center">
 
-    <!-- Social Icons -->
-    <div class="mb-3">
-      <a href="https://www.instagram.com/angelshomeimprovent2022/reels/?hl=en"><i class="bi bi-instagram mx-2"></i></a>
-      <a href="https://www.tiktok.com/@angelshomeimprovement"><i class="bi bi-tiktok mx-2"></i></a>
+    <h5 class="mb-3">Angel's Home Improvements</h5>
+
+    <p class="mb-3">
+      Quality craftsmanship you can trust.
+    </p>
+
+    <div class="mb-4">
+      <a href="#" class="footer-icon"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="footer-icon"><i class="fa-brands fa-tiktok"></i></a>
     </div>
 
-    <p class="mb-1">© 2026 All Rights Reserved</p>
+    <p class="small mb-0">© 2026 All Rights Reserved</p>
     <p>Crafted by Kermit Webcraft.</p>
 
   </div>
@@ -314,7 +362,10 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
+<!-- GSAP ScrollTrigger Plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script> // Initialize Swiper
 const swiper = new Swiper('.hero-slider', {
   loop: true,
   autoplay: {
@@ -329,7 +380,7 @@ const swiper = new Swiper('.hero-slider', {
 });
 </script>
 
-<script>
+<script> // Header Scroll Effect
 window.addEventListener("scroll", function () {
   const headerElements = document.querySelectorAll(".transparent-header");
 
@@ -338,6 +389,20 @@ window.addEventListener("scroll", function () {
       el.classList.add("scrolled");
     } else {
       el.classList.remove("scrolled");
+    }
+  });
+});
+</script>
+
+<script> // GSAP Scroll Animations
+gsap.utils.toArray("section").forEach((section) => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
     }
   });
 });

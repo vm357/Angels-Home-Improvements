@@ -36,6 +36,19 @@ body {
   font-weight: 500;
 }
 
+.top-left i {
+  font-size: 18px;
+}
+
+.top-right {
+  font-weight: 500;
+}
+
+.top-bar a,
+.social-link {
+  text-decoration: none;
+}
+
 /* ON SCROLL */
 .scrolled {
   background: white !important;
@@ -63,6 +76,7 @@ body {
 
 .navbar {
   background: transparent;
+  margin-top: 10px;
 }
 
 .navbar-nav {
@@ -143,6 +157,7 @@ body {
   position: relative;
 }
 
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -155,12 +170,29 @@ body {
   padding-bottom: 60px;
 }
 
-.overlay h1 {
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
+  text-align: center;
+  z-index: 10;
+  padding: 20px;
+}
+
+.hero-content h1 {
   font-size: 3rem;
-  font-weight: 600;
-  animation: fadeUp 1s ease;
+  font-weight: 700;
   max-width: 800px;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
 
@@ -242,6 +274,82 @@ html {
 }
 /* ===== END SERVICES/WHAT WE DO SECTION ===== */
 
+/* ===== SOCIAL SECTION ===== */
+.social-section {
+  background: var(--dark);
+  position: relative;
+  margin-top: -40px;
+}
+
+.social-section {
+  background: radial-gradient(circle at 20% 20%, #5A72A0, #1A2130);
+  animation: pulseBg 8s infinite alternate;
+}
+
+@keyframes pulseBg {
+  0% {
+    background-position: 20% 20%;
+  }
+  100% {
+    background-position: 80% 80%;
+  }
+}
+
+/* optional subtle gradient (makes it feel less flat) */
+.social-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(131,180,255,0.15), transparent);
+  pointer-events: none;
+}
+
+.social-section .col-md-4.text-center {
+  padding: 20px;
+}
+
+.social-section .col-md-4.text-center {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+/* video cards */
+.video-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  aspect-ratio: 10/16;
+  max-width: 350px;
+  margin: auto;
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hover animation */
+.video-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* social icons */
+.social-link {
+  font-size: 28px;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+/* ===== END OF SOCIAL SECTION ===== */
+
 /* ===== LEAD FORM ===== */
 
 .lead-section {
@@ -298,3 +406,21 @@ textarea.form-control {
   border-color: var(--primary);
 }
 /* ===== END OF LEAD FORM SECTION ===== */
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--dark);
+  color: white;
+}
+
+.footer-icon {
+  font-size: 22px;
+  margin: 0 10px;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: var(--accent);
+}
+/* ===== END OF FOOTER ===== */
