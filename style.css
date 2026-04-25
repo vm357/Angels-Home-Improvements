@@ -64,7 +64,7 @@ body {
 /* ======= Navigation Bar ======= */
 .nav-logo {
   height: 60px;
-  transform: scale(1.8);
+  transform: scale(2);
   transform-origin: left center;
   transition: 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(82, 80, 80, 0.2));
@@ -72,7 +72,7 @@ body {
 
 /* shrink slightly on scroll */
 .scrolled .nav-logo {
-  transform: scale(2);
+  transform: scale(1.8);
 }
 
 .navbar {
@@ -458,7 +458,15 @@ textarea.form-control {
   max-width: 100%;
 }
 
-.about-page .container,
+.about-page .container {
+  max-width: 1450px; /* standard Bootstrap feel */
+  margin: 0 auto;
+}
+
+.about-contact .container {
+  max-width: 1350px;
+}
+
 .about-page .container-fluid {
   max-width: 100%;
 }
@@ -480,6 +488,11 @@ textarea.form-control {
 
 .about-contact {
   background: var(--light);
+}
+
+.about-contact .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* LEFT SIDE */
@@ -549,7 +562,7 @@ textarea.form-control {
   position: fixed;
   width: 100%;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.185);
 }
 
 /* top bar text/icons */
@@ -586,6 +599,10 @@ textarea.form-control {
     top: 20px;
   }
 
+  .about-page .nav-logo {
+    transform: scale(1.8);
+  }
+
   .about-contact {
     padding-top: 120px;
   }
@@ -608,5 +625,18 @@ textarea.form-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }  
+  }
+  
+  .about-left {
+    text-align: center;
+  }
+
+  .about-logo {
+    margin: 0 auto 15px;
+    max-width: 375px;
+  }
+
+  .info-grid {
+    text-align: center;
+  }
 }
