@@ -563,9 +563,6 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-top: 120px;
-  }
 
   .top-bar {
     height: 35px;
