@@ -79,6 +79,7 @@ body {
   background: transparent;
   margin-top: 20px;
   z-index: 1000;
+  padding: 1rem 0;
 }
 
 .navbar-nav {
@@ -135,10 +136,9 @@ body {
   color: white;
 }
 
-.navbar {
-  padding: 1rem 0;
+.navbar-toggler-icon {
+  filter: invert(1);
 }
-
 /* ======= End Navigation Bar ======= */
 
 /* ======= Hero Section ======= */
@@ -444,7 +444,23 @@ textarea.form-control {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ======= ABOUT US PAGE ======= */
 .about-page {
-  padding-top: 140px; /* space for fixed header */
+  padding-top: 140px;
+  overflow-x: hidden;
+}
+
+.about-page .navbar-nav {
+  margin-left: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.about-page .navbar-about .container {
+  max-width: 100%;
+}
+
+.about-page .container,
+.about-page .container-fluid {
+  max-width: 100%;
 }
 
 .top-bar-about {
@@ -457,7 +473,7 @@ textarea.form-control {
 
 .navbar-about {
   position: fixed;
-  top: 40px; /* sits under top bar */
+  top: 10px;
   width: 100%;
   z-index: 1000;
 }
@@ -491,7 +507,6 @@ textarea.form-control {
 .about-social:hover {
   color: var(--accent);
 }
-
 
 /* RIGHT FORM CARD (DIFFERENT LOOK FROM INDEX) */
 .about-form-card {
@@ -563,16 +578,35 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
-
-  .top-bar {
-    height: 35px;
+  .top-bar-about {
+    height: 40px;
   }
 
   .navbar-about {
-    top: 35px;
+    top: 20px;
   }
 
   .about-contact {
     padding-top: 120px;
   }
+
+  .about-page .navbar-nav {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .about-page .navbar-collapse {
+    text-align: center;
+  }
+
+  .about-page .cta-btn {
+    display: block;
+    margin: 15px auto 0;
+  }  
+
+  .about-page .navbar-about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
 }
