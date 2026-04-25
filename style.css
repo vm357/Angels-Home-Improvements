@@ -471,6 +471,28 @@ textarea.form-control {
   max-width: 100%;
 }
 
+/* This centers the dropdown text */
+.about-page .dropdown-menu {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.about-page .dropdown-item {
+  padding: 10px 20px;
+  transition: all 0.25s ease;
+  font-weight: 500;  
+  text-align: center;
+}
+
+.about-page .dropdown-item:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateX(3px);
+}
+
 .top-bar-about {
   position: fixed;
   top: 0;
@@ -562,7 +584,14 @@ textarea.form-control {
   position: fixed;
   width: 100%;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.185);
+  background: rgba(255, 255, 255, 0.237);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);  
+}
+
+.scrolled {
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(8px);
 }
 
 /* top bar text/icons */
@@ -577,6 +606,7 @@ textarea.form-control {
 /* navbar links */
 .solid-header .nav-link {
   color: var(--dark) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);  
 }
 
 /* CTA button */
@@ -590,6 +620,7 @@ textarea.form-control {
   color: white;
 }
 
+/* About page responsive adjustments */
 @media (max-width: 768px) {
   .top-bar-about {
     height: 40px;
@@ -626,6 +657,11 @@ textarea.form-control {
     justify-content: space-between;
     align-items: center;
   }
+
+  .about-page .dropdown-menu {
+    width: 100%;
+    text-align: center;
+  }  
   
   .about-left {
     text-align: center;
