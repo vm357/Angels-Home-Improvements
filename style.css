@@ -50,11 +50,6 @@ body {
   text-decoration: none;
 }
 
-/* ON SCROLL */
-.scrolled {
-  background: white !important;
-}
-
 .scrolled.top-bar {
   color: var(--dark);
 }
@@ -74,6 +69,38 @@ body {
 .scrolled .nav-logo {
   transform: scale(1.8);
 }
+
+/* Global navbar styles */
+/* NAV LINKS HOVER (desktop + mobile) */
+.navbar .nav-link {
+  transition: all 0.25s ease;
+  position: relative;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.451);
+  display: inline-block;
+  padding: 8px 12px; /* gives it "space" */  
+}
+
+/* subtle hover */
+.navbar .nav-link:hover {
+  color: var(--accent) !important;
+  transform: translateY(-1px);
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+/* End global navbar styles */
 
 .navbar {
   background: transparent;
@@ -138,6 +165,14 @@ body {
 
 .navbar-toggler-icon {
   filter: invert(1);
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
 }
 /* ======= End Navigation Bar ======= */
 
@@ -227,6 +262,12 @@ body {
 
   .overlay h1 {
     font-size: 2rem;
+  }
+
+  .navbar {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 /* ======= End Hero Section ======= */
@@ -472,7 +513,7 @@ textarea.form-control {
 }
 
 /* This centers the dropdown text */
-.about-page .dropdown-menu {
+.dropdown-menu {
   border-radius: 10px;
   border: none;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
@@ -480,17 +521,22 @@ textarea.form-control {
   text-align: center;
 }
 
-.about-page .dropdown-item {
+.dropdown-item {
   padding: 10px 20px;
   transition: all 0.25s ease;
   font-weight: 500;  
   text-align: center;
 }
 
-.about-page .dropdown-item:hover {
+.dropdown-item:hover {
   background: var(--primary);
   color: white;
   transform: translateX(3px);
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
 }
 
 .top-bar-about {
@@ -658,7 +704,7 @@ textarea.form-control {
     align-items: center;
   }
 
-  .about-page .dropdown-menu {
+  .dropdown-menu {
     width: 100%;
     text-align: center;
   }  
