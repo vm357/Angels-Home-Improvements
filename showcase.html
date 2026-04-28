@@ -101,16 +101,32 @@
 <section class="before-after-section text-center">
   <h2 class="mb-5">Before & After</h2>
 
-  <div class="wrapper">
-    <div class="before">
-      <img class="content-image" src="before2.png" />
+  <div class="ba-grid">
+
+    <div class="wrapper">
+      <div class="before"><img class="content-image" src="before1.png"></div>
+      <div class="after"><img class="content-image" src="after1.png"></div>
+      <div class="scroller"></div>
     </div>
 
-    <div class="after">
-      <img class="content-image" src="after2.png" />
+    <div class="wrapper">
+      <div class="before"><img class="content-image" src="before2.png"></div>
+      <div class="after"><img class="content-image" src="after2.png"></div>
+      <div class="scroller"></div>
     </div>
 
-    <div class="scroller"></div>
+    <div class="wrapper">
+      <div class="before"><img class="content-image" src="before3.png"></div>
+      <div class="after"><img class="content-image" src="after3.png"></div>
+      <div class="scroller"></div>
+    </div>
+
+    <div class="wrapper">
+      <div class="before"><img class="content-image" src="before.png"></div>
+      <div class="after"><img class="content-image" src="after.png"></div>
+      <div class="scroller"></div>
+    </div>
+
   </div>
 </section>
 <!-- END OF BEFORE & AFTER SECTION -->
@@ -119,15 +135,21 @@
  <section class="work-gallery">
   <h2 class="text-center mb-4">Our Team's Accomplishments</h2>
 
-  <div class="gallery-row">
+<div class="gallery-container">
+  <button class="gallery-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+  <div class="gallery-row" id="galleryRow">
     <img src="image.png">
     <img src="image1.png">
     <img src="image2.png">
     <img src="image3.png">
     <img src="image4.png">
     <img src="image5.png">
-    <img src="image6.png">   
+    <img src="image6.png">
   </div>
+
+  <button class="gallery-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
 </section>
 <!-- END OF IMAGE GRID SECTION -->
 
@@ -218,6 +240,66 @@ window.addEventListener("scroll", function () {
       el.classList.remove("scrolled");
     }
   });
+});
+</script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Before/After
+gsap.from(".before-after-section", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".before-after-section",
+    start: "top 80%"
+  }
+});
+
+// Gallery
+gsap.from(".gallery-row img", {
+  autoAlpha: 0,
+  y: 40,
+  stagger: 0.1,
+  duration: 0.8,
+  immediateRender: false,
+  scrollTrigger: {
+    trigger: ".work-gallery",
+    start: "top 85%"
+  }
+});
+
+gsap.to(".work-gallery", {
+  y: -40,
+  scrollTrigger: {
+    trigger: ".work-gallery",
+    scrub: true
+  }
+});
+
+// Videos
+gsap.from(".video-showcase", {
+  autoAlpha: 0,
+  y: 40,
+  stagger: 0.2,
+  duration: 0.8,
+  immediateRender: false,
+  scrollTrigger: {
+    trigger: ".video-grid",
+    start: "top 85%"
+  }
+});
+
+// TikTok
+gsap.from(".tiktok-box", {
+  opacity: 0,
+  scale: 0.9,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".tiktok-section",
+    start: "top 80%"
+  }
 });
 </script>
 
