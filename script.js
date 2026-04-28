@@ -1,4 +1,4 @@
-// Before and after page scroller
+// ---------- Before and after page scroller -------------
 document.querySelectorAll('.wrapper').forEach(wrapper => {
   const scroller = wrapper.querySelector('.scroller');
   const after = wrapper.querySelector('.after');
@@ -27,7 +27,7 @@ document.querySelectorAll('.wrapper').forEach(wrapper => {
 
   window.addEventListener('mousemove', (e) => {
     if (!active) return;
-    scrollIt(e.pageX);
+    scrollIt(e.clientX);
   });
 
   // touch (for mobile)
@@ -41,12 +41,13 @@ document.querySelectorAll('.wrapper').forEach(wrapper => {
 
   window.addEventListener('touchmove', (e) => {
     if (!active) return;
-    scrollIt(e.touches[0].pageX);
+    scrollIt(e.touches[0].clientXX);
   });
 
   // initial position
   scrollIt(wrapper.offsetWidth / 2);
 });
+// ------------ End of before and after page scroller ----------
 
 // Showcase page gallery grid
 const gallery = document.getElementById("galleryRow");
