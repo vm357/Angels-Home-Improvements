@@ -5,14 +5,17 @@ document.querySelectorAll('.wrapper').forEach(wrapper => {
 
   let active = false;
 
-  function scrollIt(x) {
-    const rect = wrapper.getBoundingClientRect();
-    let pos = x - rect.left;
-    let width = Math.max(0, Math.min(pos, rect.width));
+function scrollIt(x) {
+  const rect = wrapper.getBoundingClientRect();
 
-    after.style.width = width + "px";
-    scroller.style.left = (width - 25) + "px";
-  }
+  let pos = x - rect.left;
+  let width = Math.max(0, Math.min(pos, rect.width));
+
+  const percent = (width / rect.width) * 100;
+
+  after.style.width = percent + "%";
+  scroller.style.left = `calc(${percent}% - 25px)`;
+}
 
   // mouse
   scroller.addEventListener('mousedown', () => {
