@@ -76,8 +76,10 @@ body {
   transition: all 0.25s ease;
   position: relative;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.451);
-  display: inline-block;
-  padding: 8px 12px; /* gives it "space" */  
+  display: inline-flex; 
+  align-items: center;           
+  gap: 6px;                       
+  padding: 8px 12px;  
 }
 
 /* subtle hover */
@@ -128,6 +130,31 @@ body {
 
 .navbar .nav-link {
   color: white !important;
+}
+
+.navbar .dropdown-toggle:focus,
+.navbar .dropdown-toggle:active,
+.navbar .dropdown-toggle.show {
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.navbar .dropdown-toggle::after {
+  display: none;
+  margin-left: 6px;   /* space between text and arrow */
+  vertical-align: middle;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+.navbar .dropdown-toggle i {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar .dropdown-toggle.show i {
+  transform: rotate(180deg);
 }
 
 .cta-btn {
@@ -703,11 +730,6 @@ textarea.form-control {
     justify-content: space-between;
     align-items: center;
   }
-
-  .dropdown-menu {
-    width: 100%;
-    text-align: center;
-  }  
   
   .about-left {
     text-align: center;
