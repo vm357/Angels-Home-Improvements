@@ -757,7 +757,6 @@ body.showcase-page {
 }
 
 /* ========== BEFORE/AFTER SECTION (INSPO FROM CODEPEN) ======= */
-/* You can remove this page div in your website */
 #page{
   width:100%;
   height:100%;
@@ -806,13 +805,22 @@ body.showcase-page {
 }
 */
 
+.before img,
+.after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
 .scroller{
   width: 50px;
   height:50px;
   position: absolute;
-  left:100px;
+  left:50%;
   top:50%;
-  transform:translateY(-50%);
+  transform:translateY(-50%,-50%);
   border-radius:50%;
   border: 4px solid white;
   backdrop-filter: blur(6px);
@@ -968,8 +976,20 @@ body.showcase-page {
   border-radius: 12px;
 }
 
+.video-grid video {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+  aspect-ratio: 11/16;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 .video-showcase {
   transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
 }
 
 .video-showcase:hover {

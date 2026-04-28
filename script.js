@@ -1,31 +1,29 @@
-// ---------- Before and after page scroller -------------
 document.querySelectorAll('.wrapper').forEach(wrapper => {
   const scroller = wrapper.querySelector('.scroller');
   const after = wrapper.querySelector('.after');
 
   let active = false;
 
-function scrollIt(x) {
-  const rect = wrapper.getBoundingClientRect();
+  function scrollIt(x) {
+    const rect = wrapper.getBoundingClientRect();
 
-  let pos = x - rect.left;
-  let width = Math.max(0, Math.min(pos, rect.width));
+    let pos = x - rect.left;
+    let width = Math.max(0, Math.min(pos, rect.width));
 
-  const percent = (width / rect.width) * 100;
+    const percent = (width / rect.width) * 100;
 
-  after.style.width = percent + "%";
-  scroller.style.left = `calc(${percent}% - 25px)`;
-}
+    after.style.width = percent + "%";
+    scroller.style.left = `calc(${percent}% - 25px)`;
+  }
 
   // mouse
-  scroller.addEventListener('mousedown', () => {
+  scroller.addEventListener('mousedown', (e) => {
+    e.preventDefault(); 
     active = true;
-    scroller.classList.add('scrolling');
   });
 
   window.addEventListener('mouseup', () => {
     active = false;
-    scroller.classList.remove('scrolling');
   });
 
   window.addEventListener('mousemove', (e) => {
@@ -33,7 +31,7 @@ function scrollIt(x) {
     scrollIt(e.clientX);
   });
 
-  // touch (for mobile)
+  // touch (FIXED)
   scroller.addEventListener('touchstart', () => {
     active = true;
   });
@@ -44,11 +42,11 @@ function scrollIt(x) {
 
   window.addEventListener('touchmove', (e) => {
     if (!active) return;
-    scrollIt(e.touches[0].clientXX);
+    scrollIt(e.touches[0].clientX); 
   });
 
-  // initial position
-  scrollIt(wrapper.offsetWidth / 2);
+  const rect = wrapper.getBoundingClientRect();
+  scrollIt(rect.left + rect.width / 2);
 });
 // ------------ End of before and after page scroller ----------
 
