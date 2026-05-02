@@ -157,12 +157,12 @@
                 No obligation. Response within 24 hours.
             </p>
 
-          <form>
+          <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
 
             <!-- Name -->
             <div class="row mb-3">
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="First Name">
+                <input type="text" name="First Name" class="form-control" placeholder="First Name">
               </div>
               <div class="col-md-6">
                 <input type="text" class="form-control" placeholder="Last Name">
@@ -172,10 +172,10 @@
             <!-- Contact -->
             <div class="row mb-3">
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Phone Number">
+                <input type="text" name="Phone Number" class="form-control" placeholder="Phone Number">
               </div>
               <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" name="Email" class="form-control" placeholder="Email">
               </div>
             </div>
 
@@ -184,21 +184,33 @@
               <label class="form-label fw-semibold">What services are you interested in?</label>
 
               <div class="row">
-                <div class="col-6"><input type="checkbox"> Bathrooms</div>
-                <div class="col-6"><input type="checkbox"> Kitchens</div>
-                <div class="col-6"><input type="checkbox"> Basements</div>
-                <div class="col-6"><input type="checkbox"> Painting</div>
-                <div class="col-6"><input type="checkbox"> Decks</div>
-                <div class="col-6"><input type="checkbox"> Other</div>
+                <div class="col-6"><input type="checkbox" name="Services[]" value="Bathrooms"> Bathrooms</div>
+                <div class="col-6"><input type="checkbox" name="Services[]" value="Kitchens"> Kitchens</div>
+                <div class="col-6"><input type="checkbox" name="Services[]" value="Basements"> Basements</div>
+                <div class="col-6"><input type="checkbox" name="Services[]" value="Painting"> Painting</div>
+                <div class="col-6"><input type="checkbox" name="Services[]" value="Decks"> Decks</div>
+                <div class="col-6"><input type="checkbox" name="Services[]" value="Other"> Other</div>
               </div>
             </div>
 
             <!-- Message -->
             <label class="form-label fw-semibold">Tell us about your project</label>
-            <textarea class="form-control mb-3" rows="3" placeholder="Describe your project..."></textarea>
+            <textarea class="form-control mb-3" name="Describe your project" rows="3" placeholder="Describe your project..."></textarea>
 
             <label class="form-label fw-semibold">How did you hear about us?</label>
-            <textarea class="form-control mb-3" rows="2" placeholder="Describe how you heard about us (e.g., social media, referral, search engine..)"></textarea>
+            <textarea class="form-control mb-3" name="How did you hear about us?" rows="2" placeholder="Describe how you heard about us (e.g., social media, referral, search engine..)"></textarea>
+
+            <!-- Image Upload -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Upload a photo (optional)</label>
+              <p class="small text-muted">
+                You can also text us photos after submitting your request.
+              </p>
+              <input type="file"
+                class="form-control" 
+                name="photo" 
+                accept="image/*">
+            </div>
 
             <div class="text-center">
               <button class="btn btn-dark px-4">Submit</button>
