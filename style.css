@@ -553,6 +553,8 @@ textarea.form-control {
   padding-top: 20px;
 }
 
+
+
 /* Mobile spacing tweak */
 @media (max-width: 768px) {
   .footer {
