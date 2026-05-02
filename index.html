@@ -238,25 +238,25 @@
 		<i>Tell us what you're looking for and we'll get back to you quickly.</i>
 	  </p>
 
-      <form>
+      <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
 
         <!-- Name -->
         <div class="row mb-3">
           <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="First Name">
+            <input type="text" class="form-control" name="First Name" placeholder="First Name">
           </div>
           <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Last Name">
+            <input type="text" class="form-control" name="Last Name" placeholder="Last Name">
           </div>
         </div>
 
         <!-- Contact -->
         <div class="row mb-3">
           <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Phone Number">
+            <input type="text" class="form-control" name="Phone Number" placeholder="Phone Number">
           </div>
           <div class="col-md-6">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" class="form-control" name="Email" placeholder="Email">
           </div>
         </div>
 
@@ -268,42 +268,42 @@
 
             <div class="col-md-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="bathrooms">
+                <input class="form-check-input" type="checkbox" id="bathrooms" name="Services[]" value="Bathrooms">
                 <label class="form-check-label" for="bathrooms">Bathrooms</label>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="kitchens">
+                <input class="form-check-input" type="checkbox" id="kitchens" name="Services[]" value="Kitchens">
                 <label class="form-check-label" for="kitchens">Kitchens</label>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="basements">
+                <input class="form-check-input" type="checkbox" id="basements" name="Services[]" value="Basements">
                 <label class="form-check-label" for="basements">Basements</label>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="painting">
+                <input class="form-check-input" type="checkbox" id="painting" name="Services[]" value="Painting">
                 <label class="form-check-label" for="painting">Painting</label>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="decks">
+                <input class="form-check-input" type="checkbox" id="decks" name="Services[]" value="Decks">
                 <label class="form-check-label" for="decks">Decks</label>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="other">
+                <input class="form-check-input" type="checkbox" id="other" name="Services" value="Other">
                 <label class="form-check-label" for="other">Other</label>
               </div>
             </div>			
@@ -314,14 +314,26 @@
         <!-- Project Description -->
         <div class="mb-4">
           <label class="form-label fw-semibold">Tell us about your project</label>
-          <textarea class="form-control" rows="4" placeholder="Describe your project..."></textarea>
+          <textarea class="form-control" name="Describe your project" rows="4" placeholder="Describe your project..."></textarea>
         </div>
 
         <!-- How did you hear about us? -->
         <div class="mb-4">
           <label class="form-label fw-semibold">How did you hear about us?</label>
-          <textarea class="form-control" rows="2" placeholder="Describe how you heard about us (e.g., social media, referral, search engine..)"></textarea>
-        </div>		
+          <textarea class="form-control" name="How did you hear about us?" rows="2" placeholder="Describe how you heard about us (e.g., social media, referral, search engine..)"></textarea>
+        </div>
+        
+        <!-- Image Upload -->
+        <div class="mb-4">
+          <label class="form-label fw-semibold">Upload a photo (optional)</label>
+          <p class="small text-muted">
+            You can also text us photos after submitting your request.
+          </p>
+          <input type="file" 
+            class="form-control"
+            name="photo"
+            accept="image/*">
+        </div>
 
         <!-- Submit -->
         <div class="text-center">
