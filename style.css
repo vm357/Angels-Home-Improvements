@@ -259,8 +259,9 @@ body {
 */
 
 .hero-content h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Canela', serif;
   font-weight: 300;
+  font-size: 3.5rem;
   letter-spacing: 1px;
 }
 
@@ -308,6 +309,12 @@ html {
   background: white;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+.what-we-do h2 {
+  font-family: 'Canela', serif;
+  font-weight: 300;
+  margin-bottom: 40px;
 }
 
 .services-strip {
