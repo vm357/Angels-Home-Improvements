@@ -848,6 +848,60 @@ body.showcase-page {
   );
 }
 
+/* ========== SHOWCASE BANNER ======= */
+.showcase-banner {
+  width: 100%;
+  height: 60vh; /* adjust height */
+  background: url("banner.png") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-banner {
+  background-size: 110%;
+  transition: 6s ease;
+}
+
+.showcase-banner:hover {
+  background-size: 100%;
+}
+
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.banner-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.banner-overlay p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .showcase-banner {
+    height: 40vh;
+  }
+
+  .banner-overlay h1 {
+    font-size: 2rem;
+  }
+}
+/* ====== END OF SHOWCASE BANNER ======= */
+
+
 /* ========== BEFORE/AFTER SECTION (INSPO FROM CODEPEN) ======= */
 #page{
   width:100%;

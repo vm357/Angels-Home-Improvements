@@ -93,7 +93,16 @@
 
 </div>
 </nav>
-<!-- END OF NAVBAR -->   
+<!-- END OF NAVBAR -->  
+ 
+<!-- SHOWCASE BANNER -->
+<section class="showcase-banner">
+  <div class="banner-overlay">
+    <!-- <h1>Our Work</h1> -->
+    <!-- <p>See the transformations we've brought to life</p> -->
+  </div>
+</section>
+<!-- END BANNER -->
     
 <!-- BEFORE & AFTER SECTION -->
 <section class="before-after-section text-center">
@@ -289,6 +298,19 @@ window.addEventListener("scroll", function () {
 
 <script>
 gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".banner-overlay h1", {
+  opacity: 0,
+  y: 40,
+  duration: 1
+});
+
+gsap.from(".banner-overlay p", {
+  opacity: 0,
+  y: 20,
+  delay: 0.3,
+  duration: 1
+});
 
 // Before/After
 gsap.from(".before-after-section", {
