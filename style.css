@@ -304,6 +304,13 @@ a {
 }
 */
 
+.hero-title span {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+}
+
 .hero-content h1 {
   font-family: 'Canela', serif;
   font-weight: 300;

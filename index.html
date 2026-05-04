@@ -101,7 +101,9 @@
  <section class="hero">
   <div class="swiper hero-slider">
     <div class="hero-content">
-      <h1>Bring Your Visions to Life</h1>
+      <h1 class="hero-title">
+        <span>Bring Your Visions to Life</span>
+      </h1>
       <!-- <p>Bathrooms • Kitchens • Basements • Decks</p> -->
     </div>
 
@@ -419,6 +421,16 @@ const swiper = new Swiper('.hero-slider', {
     crossFade: true
   }
 });
+
+gsap.timeline()
+  .to(".hero-title span", {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    duration: 1.2,
+    stagger: 0.25,
+    ease: "power3.out"
+  });
 </script>
 
 <script> // Header Scroll Effect
