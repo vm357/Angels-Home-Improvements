@@ -292,9 +292,7 @@ a {
   padding: 20px;
 }
 
-.hero-content {
-  animation: fadeUp 1.2s ease;
-}
+
 
 /* optional: make hero text larger and bolder on desktop
 .hero-content h1 {
