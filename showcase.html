@@ -179,6 +179,12 @@
 </section>
 <!-- END OF IMAGE GRID SECTION -->
 
+<!-- IMAGE LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightboxImg">
+</div>
+
 <!-- VIDEOS GRID SECTION -->
 <section class="video-grid">
   <h2 class="text-center mb-5">Project Videos</h2>
@@ -187,15 +193,15 @@
     <div class="row g-4">
 
       <div class="col-md-4 video-showcase">
-        <video src="video.mp4" controls></video>
+        <video src="video.mp4" poster="video-poster.jpg" controls playsinline preload="metadata"></video>
       </div>
 
       <div class="col-md-4 video-showcase">
-        <video src="Download (1).mp4" controls></video>
+        <video src="Download (1).mp4" poster="video-poster1.jpg" controls playsinline preload="metadata"></video>
       </div>
 
       <div class="col-md-4 video-showcase">
-        <video src="video1.mp4" controls></video>
+        <video src="video1.mp4" poster="video-poster2.jpg" controls playsinline preload="metadata"></video>
       </div>
 
     </div>
@@ -341,6 +347,23 @@ gsap.to(".work-gallery", {
   scrollTrigger: {
     trigger: ".work-gallery",
     scrub: true
+  }
+});
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+document.querySelectorAll(".gallery-row img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = img.src;
+  });
+});
+
+// Close when clicking outside image
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.classList.remove("active");
   }
 });
 
