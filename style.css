@@ -1319,135 +1319,275 @@ body.showcase-page {
 /* ====== SERVICES PAGES ====== */
 
 
-/* ========= INTERIORSERVICES.HTML PAGE ======= */
-/* ===== SERVICES PAGE BACKGROUND ===== */
+/* ===================================================== */
+/* ===== INTERIOR SERVICES PAGE ===== */
+/* ===================================================== */
+
 body.interiorservices-page {
   background: linear-gradient(
     180deg,
-    #c1d6ff 0%,   /* blue top */
-    #FDFFE2 100%  /* yellow bottom */
+    #c7d8ff 0%,
+    #FDFFE2 100%
   );
 }
 
-/* ===== SERVICES BANNER ===== */
+
+/* ===== HERO / BANNER ===== */
+
 .interiorservices-page .services-banner {
-  height: 45vh;
+  min-height: 52vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  overflow: hidden;
 }
 
-.interiorservices-page .services-banner .banner-overlay {
+.interiorservices-page .banner-overlay {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    rgba(26, 33, 48, 0.7),
-    rgba(26, 33, 48, 0.85)
-  );
+  padding: 120px 20px 80px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 28, 45, 0.88),
+      rgba(42, 60, 92, 0.82)
+    );
+    
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
   text-align: center;
   color: white;
-  padding: 20px;
 }
 
 .interiorservices-page .services-banner h1 {
   font-family: 'Canela', serif;
-  font-size: 3rem;
+  font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 300;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
 .interiorservices-page .services-banner p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  opacity: 0.9;
+  max-width: 950px;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  opacity: 0.92;
 }
+
 
 /* ===== SERVICES SECTION ===== */
+
 .interiorservices-page .services-section {
-  padding: 80px 20px;
+  padding: 110px 24px;
 }
 
-/* each row */
+
+/* ===== EACH SERVICE ROW ===== */
+
 .interiorservices-page .service-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto 80px;
+  gap: 70px;
+
+  max-width: 1320px;
+  margin: 0 auto 120px;
 }
 
-/* flip layout */
+
+/* alternating layout */
+
 .interiorservices-page .service-row.reverse {
   flex-direction: row-reverse;
 }
 
-/* text side */
+
+/* ===== TEXT SIDE ===== */
+
 .interiorservices-page .service-text {
   flex: 1;
 }
 
-.interiorservices-page .service-text.reverse {
-  flex: 1;
-  margin-right: -50px;
-}
-
 .interiorservices-page .service-text h2 {
   font-family: 'Canela', serif;
+  font-size: clamp(2rem, 3vw, 3.3rem);
   font-weight: 300;
-  margin-bottom: 15px;
+  color: #1d2738;
+
+  margin-bottom: 10px;
+}
+
+.interiorservices-page .service-text h5 {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  color: #5d6d86;
+}
+
+.interiorservices-page .service-text strong {
+  color: #181818;
 }
 
 .interiorservices-page .service-text p {
-  color: #444;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.95;
+  color: #404040;
 }
 
-/* image side */
+
+/* ===== IMAGE SIDE ===== */
+
 .interiorservices-page .service-image {
-  flex: 1.2;
-  margin-right: -50px;
-}
-
-.interiorservices-page .service-image.reverse {
-  flex: 1.2;
-  margin-left: -50px;
-}
-
-.interiorservices-page .service-image.reverse img {
-  width: 95%;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: 0.4s ease;
-  margin-left: -20px;
+  flex: 1.05;
 }
 
 .interiorservices-page .service-image img {
   width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: 0.4s ease;
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.12);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+
+  display: block;
 }
+
 
 /* hover effect */
+
 .interiorservices-page .service-image img:hover {
-  transform: scale(1.03);
+  transform: scale(1.025);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.16);
 }
 
-/* mobile */
-@media (max-width: 768px) {
+
+/* ===================================================== */
+/* ===== EXTERIOR PAGE DIFFERENCES ===== */
+/* ===================================================== */
+
+body.exteriorservices-page {
+  background: linear-gradient(
+    180deg,
+    #ffe7bb 0%,
+    #d7ecff 100%
+  );
+}
+
+
+/* warmer outdoor banner */
+
+.exteriorservices-page .banner-overlay {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(64, 41, 18, 0.88),
+      rgba(101, 73, 39, 0.82)
+    );
+}
+
+
+/* ===================================================== */
+/* ===== TABLET ===== */
+/* ===================================================== */
+
+@media (max-width: 992px) {
+
   .interiorservices-page .service-row,
   .interiorservices-page .service-row.reverse {
+    gap: 45px;
+  }
+
+  .interiorservices-page .service-text p {
+    line-height: 1.8;
+  }
+}
+
+
+/* ===================================================== */
+/* ===== MOBILE ===== */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+  .interiorservices-page .services-banner {
+    min-height: auto;
+  }
+
+  .interiorservices-page .banner-overlay {
+    padding:
+      120px 24px 70px;
+  }
+
+  .interiorservices-page .services-banner p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .interiorservices-page .services-section {
+    padding: 70px 20px;
+  }
+
+  .interiorservices-page .service-row,
+  .interiorservices-page .service-row.reverse {
+
     flex-direction: column;
+    gap: 35px;
+
+    margin-bottom: 90px;
+
     text-align: center;
   }
 
-  .interiorservices-page .service-row {
-    gap: 25px;
+  .interiorservices-page .service-text {
+    width: 100%;
+  }
+
+  .interiorservices-page .service-image {
+    width: 100%;
+  }
+
+  .interiorservices-page .service-image img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .interiorservices-page .service-text h2 {
+    margin-bottom: 14px;
+  }
+
+  .interiorservices-page .service-text h5 {
+    margin-bottom: 22px;
+  }
+
+  .interiorservices-page .service-text p {
+    font-size: 0.98rem;
+    line-height: 1.85;
   }
 }
-/* ========= END OF INTERIORSERVICES.HTML PAGE ======= */
+
+
+/* ===================================================== */
+/* ===== SMALL MOBILE ===== */
+/* ===================================================== */
+
+@media (max-width: 480px) {
+
+  .interiorservices-page .services-banner h1 {
+    font-size: 2.4rem;
+  }
+
+  .interiorservices-page .services-banner p {
+    font-size: 0.95rem;
+  }
+
+  .interiorservices-page .service-row {
+    margin-bottom: 70px;
+  }
+}
